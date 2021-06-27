@@ -12,24 +12,21 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 
 from config import BOT_NAME as bn, PLAY_PIC
 
-mv_buttons = [[
-        InlineKeyboardButton('Group', url='https://t.me/MahanMVGroup'),
-        InlineKeyboardButton('Channel', url ='https://t.me/MahanCreations')
-    ],[
-        InlineKeyboardButton('Creator', url='https://t.me/Mahan_Official_Admin'),
-        InlineKeyboardButton('Helper', url ='https://t.me/TheStyleKing')
-    ]]
 @Client.on_message(command("start") & other_filters2)
 async def start(_, message: Message):
     hell_pic = PLAY_PIC
     hell = f"I am **{bn}** !!\nI let you play music in your group's voice chat 😉\nTo get all commands and their explanation do /help\n\nEnjoy Streaming Music 😉"
-    butts = InlineKeyboardMarkup([[
-            InlineKeyboardButton('Add me', url='https://t.me/MahanmvMusicBot?startgroup=True'),
-            InlineKeyboardButton('Channel', url ='https://t.me/MahanCreations')
-        ],[
-            InlineKeyboardButton('Group', url='https://t.me/MahanMVGroup'),
-            InlineKeyboardButton('Creator', url='https://t.me/mahan_official_Admin')
-        ]])
+    butts = InlineKeyboardMarkup(
+        [
+            [
+                InlineKeyboardButton("Group 💬", url="https://t.me/MahanMVGroup"),
+                InlineKeyboardButton("Channel 📣", url="https://t.me/MahanCreations")
+            ],[ 
+                InlineKeyboardButton("Creator", url="https://t.me/Mahan_Official_Admin"),
+                InlineKeyboardButton("Help", url="https://t.me/TheStyleKing")
+            ]
+        ]
+    )
     await message.reply_photo(
     photo=hell_pic,
     reply_markup=butts,
