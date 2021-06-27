@@ -29,7 +29,7 @@ async def start(_, message: Message):
         ],[
             InlineKeyboardButton('Group', url='https://t.me/MahanMVGroup'),
             InlineKeyboardButton('Creator', url='https://t.me/mahan_official_Admin')
-        ]]
+        ]])
     await message.reply_photo(
     photo=hell_pic,
     reply_markup=butts,
