@@ -12,23 +12,18 @@ from pyrogram.types import Message, InlineKeyboardMarkup, InlineKeyboardButton, 
 
 from config import BOT_NAME as bn, PLAY_PIC
 
-
+mv_buttons = [[
+        InlineKeyboardButton('Group', url='https://t.me/MahanMVGroup'),
+        InlineKeyboardButton('Channel', url ='https://t.me/MahanCreations')
+    ],[
+        InlineKeyboardButton('Creator', url='https://t.me/Mahan_Official_Admin'),
+        InlineKeyboardButton('Helper', url ='https://t.me/TheStyleKing')
+    ]]
 @Client.on_message(command("start") & other_filters2)
 async def start(_, message: Message):
     hell_pic = PLAY_PIC
     hell = f"I am **{bn}** !!\nI let you play music in your group's voice chat 😉\nTo get all commands and their explanation do /help\n\nEnjoy Streaming Music 😉"
-    butts = InlineKeyboardMarkup(
-        [
-            [
-                InlineKeyboardButton(
-                    "Group 💬", url="https://t.me/MahanMVGrouo"
-                ),
-                InlineKeyboardButton(
-                    "Channel 📣", url="https://t.me/MahanCreations"
-                )
-            ]
-        ]
-    )
+    butts = InlineKeyboardMarkup(mv_buttons)
     await message.reply_photo(
     photo=hell_pic,
     reply_markup=butts,
@@ -38,28 +33,7 @@ async def start(_, message: Message):
 
 @Client.on_message(command("repo") & other_filters2)
 async def repo(_, message: Message):
-    await message.reply_text(
-        f"""🤠 Hoi!!
-I'm **{bn}** and below is the my source code 🙃
-
-Happy Streaming 😉
-""",
-        reply_markup=InlineKeyboardMarkup(
-            [
-                [
-                    InlineKeyboardButton(
-                        "Repo 📑", url="😬"
-                    ),
-                    InlineKeyboardButton(
-                        "Channel 📣", url="https://t.me/Mahan9"
-                    ),
-                    InlineKeyboardButton (
-                        "Tutorial 🎬", url="https://t.me/MahanMVGroup"
-                    )
-                ]
-            ]
-        )
-    )
+    await message.reply_sticker("CAACAgEAAxkBAAEKkOhg2FkNZRpxOUnig2qpjvH4hPym5wACtwEAAhq_GUZJBC9pQ-EOsyAE")
 
 
 @Client.on_message(command("ping") & other_filters)
