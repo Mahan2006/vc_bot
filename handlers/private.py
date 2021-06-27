@@ -24,13 +24,11 @@ async def start(_, message: Message):
     hell_pic = PLAY_PIC
     hell = f"I am **{bn}** !!\nI let you play music in your group's voice chat 😉\nTo get all commands and their explanation do /help\n\nEnjoy Streaming Music 😉"
     butts = InlineKeyboardMarkup([[
-        InlineKeyboardButton('Add Me To Your Group', url="t.me/mahanmvmusicbot?startgroup=True")
-    ],[
         InlineKeyboardButton('Group', url='https://t.me/MahanMVGroup'),
         InlineKeyboardButton('Channel', url ='https://t.me/MahanCreations')
     ],[
         InlineKeyboardButton('Creator', url='https://t.me/Mahan_Official_Admin'),
-        InlineKeyboardButton('Helper', url ='https://t.me/TheStyleKing')
+        InlineKeyboardButton('Source', url='https://t.me/TheStyleKing')
     ]]
     await message.reply_photo(
     photo=hell_pic,
